@@ -1,0 +1,5 @@
+baseball game where user clicks mouse or key when the ball reaches the correct position
+
+player name entry? (how do you store input as var)
+keeps track of score
+hitting sound effect
