@@ -2,6 +2,8 @@ My Scratch project is hosted here
 
 https://scratch.mit.edu/projects/277931330/
 
+Please click the above link to give it a try
+
 
 Problem set description
 
