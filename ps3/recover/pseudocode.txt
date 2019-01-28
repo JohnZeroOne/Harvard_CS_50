@@ -1,0 +1,40 @@
+TODO
+    
+    open memory card file >
+    find beginning of JPEG
+    open a new JPEG
+    write 512 bytes until a new JPEG is found
+    detect end of file EOF
+    
+    open memory card file >
+        fopen (check return for NULL)
+        
+    find beginning of JPEG
+        fread(buffer, 1, 512, raw_file) each 512 bytes
+        check if first 3 bytes: 0xff 0xd8 0xff
+        last byte: 0xe0 through to 0xef (messy)
+            if (buffer[0] == 0xff &&
+                buffer[1] == 0xd8 &&
+                buffer[2] == 0xff &&
+                (buffer[3] & 0xf0) == 0xe0)
+        JPEGs stored next to each other
+        512 byte block (FAT)
+        
+    open a new JPEG
+        filenames: ###.jpg
+        named in order they're found (use a variable counter)
+        sprintf(filename, "%03i.jpg", 2);
+            filename char array to store the resultant string
+                002.jpg
+        FILE *img = fopen(filename, "w");
+        
+    write 512 bytes until a new JPEG is found
+        fwrite(data, size, number, outptr);
+            data: pointer to struct containing bytes youre reading from
+            size
+            number
+            outptr: FILE * to write to
+            
+    detect end of raw file EOF
+        fread(buffer, 1, 512, raw_file)
+        Add a condition to the above to end execution (file size < 512 bytes)

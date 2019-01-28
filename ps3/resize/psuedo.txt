@@ -1,0 +1,96 @@
+Input: bmp
+scale the file by n
+Output: scaled bmp
+
+bitmap is an arrangement of bytes
+bmp.h is the structure of the bitmap
+
+Resize.c
+
+Open file
+Update outfile's header info
+Read infile's scanline (horizontal) pixel by pixel
+Resize horizontally
+Remember padding
+Resize Vertically
+
+Open file
+Update outfile's header info
+    Change:
+        file size (in bytes)
+            bfSize
+            bitmapfileheader (includes pixels, padding, headers)
+                bf.bfSize = bi.biSizeImage +
+                    sizeof(BITMAPFILEHEADER) +
+                    sizeof(BITMAPINFOHEADER);
+        image size (total in bytes)
+            biSizeImage (includes pixels & padding)
+                bi.biSizeImage =
+                ((SizeOf(RGBTRIPLE) * bi.biWidth) + padding)
+                * abs(bi.biHeight);
+        width (pixels)
+            biWidth (doesn't include padding)
+                biWidth *= n
+        height (pixels)
+            biHeight
+                biHeight *= n
+Read infile's scanline (horizontal) pixel by pixel,
+    fread()
+    resizing horizontally
+        fwrite()
+        For each pixel in row, write it n times (ie if n == 2, RGB > RRGGBB)
+
+        for each row
+            for each pixel
+                write to outfile n times
+                skip infiles padding
+                    fseek()
+
+    Remember padding!
+        padding = 4(-(biWidth * sizeof(RGBTRIPLE) % 4) % 4);
+        Each pixel (RGBTRIPLE) is 3 bytes
+        Length of scanline must be a multiple of 4
+        Padding is used to make it up to 4
+            0x00 = 1 unit of padding
+        Can't read padding
+        Padding isn't an RGBTRIPLE
+        Write padding with fputc()
+        infile and outfile padding will differ
+
+    Resizing vertically
+        Repeat horizontal write on a new vertex n times
+        Either rewrite by remembering previous line or copy the last line n times
+        Using fseek() move the cursor that tracks file location
+        Rewrite
+            for each row
+                for each pixel
+                    write to array n times
+                for n times
+                    write array to outfile
+                    write outfile padding
+                skip infile padding
+        Recopy
+            for each row
+                for n-1 times
+                    write pixels, padding to outfile
+                    send infile cursor back
+                write pixels, padding to outfile
+                skip infile padding
+Output file
+
+Copy.c
+
+1). Opens a file
+2). Updates outfile header info
+3). Reads each scanline pixel by pixel
+4). Writes each pixel into the output file's scanline
+
+Resize.c
+
+1). Open file
+2). Update outfile's header info
+3). Reads each scanline pixel by pixel
+4). Resize horizontally
+5). Fill padding
+6). Resize Vertically
+7). Write each pixel into the output file's scanline

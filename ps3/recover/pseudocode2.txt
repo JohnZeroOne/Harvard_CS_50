@@ -1,0 +1,10 @@
+open card file
+repeat until end of card
+    read 512 bytes into a buffer
+    at start of a new JPG?
+        yes -> write file
+        no -> continue buffer
+    already found a JPG?
+        no -> discard 512
+        yes -> write file
+    close any remaining files
