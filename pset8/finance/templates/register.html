@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <script type ="text/javascript">
+        function user_taken()
+        {
+            $.get("/check")
+            {
+                alert("Username taken.");
+                document.getElementById("register1").addEventListener("click", function(event){
+                event.preventDefault()
+                });
+            }
+        }
+    </script>
+    <div style="display:none;" class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Username taken!</strong> You should try adding some numbers to your username.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form action="/register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group" id="register1">
+            <input class="form-control" name="confirmation" placeholder="Password (repeat)" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}

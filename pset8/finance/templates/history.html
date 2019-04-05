@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+<p><b>Transaction history</b></p>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Symbol</th>
+              <th scope="col">Type</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Price</th>
+              <th scope="col">Transacted</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in transactions %}
+            <tr>
+                <td>{{ item.symbol }}</td>
+                <td>{{ item.type }}</td>
+                <td>{{ item.shares }}</td>
+                <td>{% if item.price %}{{ item.price|usd }}{% endif %}</td>
+                <td>{{ item.transaction }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+
+{% endblock %}
