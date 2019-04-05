@@ -1,0 +1,23 @@
+substrings
+
+TODO
+
+take in A and B and N (which is the substring length)
+
+split each string into all subtrings of length n
+    e.g: n = 3
+         "hello"
+         ["hel", "ell", "llo"]
+         n = 2
+         "hello"
+         ["he", "el", "ll", "lo"]
+
+         extract substrings from string
+            s[i:j] string splicing
+            returns the substring of s from i through to j (not including j)
+
+            may want to write helper function
+
+compute list of all substrings appearing in both A and B
+
+return list

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">House</th>
+          <th scope="col">Quidditch Position</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for student in students %}
+              <tr>
+                  <td>{{ student["name"] }}</td>
+                  <td>{{ student["house"] }}</td>
+                  <td>{{ student["quidditch"] }}</td>
+              </tr>
+          {% endfor %}
+
+        <tr>
+          <td>Harry</td>
+          <td>Gryffindor</td>
+          <td>Chaser</td>
+        </tr>
+        <tr>
+          <td>Ron</td>
+          <td>Ravenclaw</td>
+          <td>Keeper</td>
+        </tr>
+        <tr>
+          <td>Hermione</td>
+          <td>Slytherin</td>
+          <td>Seeker</td>
+        </tr>
+      </tbody>
+    </table>
+
+{% endblock %}

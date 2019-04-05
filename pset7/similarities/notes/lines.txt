@@ -1,0 +1,11 @@
+lines
+
+TODO
+
+take in strings A and B
+
+split each string into lines
+
+compute a list of lines in both A and B
+
+return the list

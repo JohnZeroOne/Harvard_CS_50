@@ -1,0 +1,3 @@
+inputs folder contains test samples,
+    e.g. compare the files of similar types
+compare is a Python file

@@ -1,0 +1,8 @@
+index
+
+TODO
+
+- inside the body block add a form
+    - let user choose file1, file2, comparison algorithm, length(for substrings)
+- make sure form sends correctly encoded POST request to / compare
+- add a button to submit the form

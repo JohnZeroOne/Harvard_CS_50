@@ -1,0 +1,11 @@
+sentences
+
+TODO
+
+take in A and B
+
+split each string into sentences
+
+calculate the list of sentences that appear in both A and B
+
+return the list of sentences that appear in both A and B
