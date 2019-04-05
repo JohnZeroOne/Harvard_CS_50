@@ -1,0 +1,27 @@
+body
+{
+    background-color: lightblue;
+    text-align: center;
+}
+
+a
+{
+    padding: 30px;
+    border: 50px;
+}
+
+header
+{
+    color: red;
+    font-size: 40;
+}
+
+main
+{
+    font-family: helvetica;
+}
+
+p
+{
+    font-family: georgia;
+}

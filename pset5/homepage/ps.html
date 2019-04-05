@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Problem Set 5</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="CS50 Problem Set 5">
+        <meta name="keywords" content="CS50, HTML, CSS">
+        <meta name="author" content="John Smith">
+    </head>
+    <body>
+        <header>
+            <a href="https://ide50-nousername134.legacy.cs50.io:8080/index.html">Home</a>
+            <a href="https://ide50-nousername134.legacy.cs50.io:8080/about.html">About</a>
+            <a href="https://ide50-nousername134.legacy.cs50.io:8080/ps.html">Problem Set</a>
+            <a href="https://ide50-nousername134.legacy.cs50.io:8080/tech.html">Tech</a>
+        </header>
+        <main>
+
+
+<h2 id="tldr"><a class="link" href="#tldr">tl;dr</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Build a simple homepage using HTML and CSS.</p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="background"><a class="link" href="#background">Background</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The internet has enabled incredible things: we can use a search engine to research anything imaginable, communicate with friends and family members around the globe, play games, take courses, and so much more. But it turns out that nearly all pages we may visit are built on three core languages, each of which serves a slightly different purpose:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>HTML, or <em>HyperText Markup Language</em>, which is used to describe the content of websites;</p>
+</li>
+<li>
+<p>CSS, <em>Cascading Style Sheets</em>, which is used to describe the aesthetics of websites; and</p>
+</li>
+<li>
+<p>JavaScript, which is used to make websites interactive and dynamic.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Focusing on just the first two of those three languages for now, create a simple homepage that introduces yourself, your favorite hobby or extracurricular, or anything else of interest to you.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="link" href="#getting-started">Getting Started</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here&#8217;s how to download this problem&#8217;s "distribution code" (i.e., starter code) into your own CS50 IDE. Log into <a href="https://cs50.io/">CS50 IDE</a> and then, in a terminal window, execute each of the below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Execute <code>update50</code> to ensure your IDE is up-to-date. That command might take a few minutes to finish.</p>
+</li>
+<li>
+<p>Execute <code>cd</code> to ensure that you&#8217;re in <code>~/workspace/</code> (i.e., a directory called <code>workspace</code> that&#8217;s in your home directory, aka <code>~</code>).</p>
+</li>
+<li>
+<p>Execute <code>mkdir pset5</code> to make (i.e., create) a directory called <code>pset5</code> in your home directory.</p>
+</li>
+<li>
+<p>Execute <code>cd pset5</code> to change into (i.e., open) that directory.</p>
+</li>
+<li>
+<p>Execute <code>wget <a href="http://cdn.cs50.net/2018/fall/psets/5/homepage/homepage.zip" class="bare">http://cdn.cs50.net/2018/fall/psets/5/homepage/homepage.zip</a></code> to download a (compressed) ZIP file with this problem&#8217;s distribution.</p>
+</li>
+<li>
+<p>Execute <code>unzip homepage.zip</code> to uncompress that file.</p>
+</li>
+<li>
+<p>Execute <code>rm homepage.zip</code> followed by <code>yes</code> or <code>y</code> to delete that ZIP file.</p>
+</li>
+<li>
+<p>Execute <code>ls</code>. You should see a directory called <code>homepage</code>, which was inside of that ZIP file.</p>
+</li>
+<li>
+<p>Execute <code>cd homepage</code> to change into that directory.</p>
+</li>
+<li>
+<p>Execute <code>ls</code>. You should see this problem&#8217;s distribution, including <code>index.html</code> and <code>styles.css</code>.</p>
+</li>
+<li>
+<p>You can immediately start a server to view the site by typing</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>http-server</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>in the terminal window and clicking on the link that appears, which should be of the form <code><a href="http://ide50-USERNAME.cs50.io:8080" class="bare">http://ide50-USERNAME.cs50.io:8080</a></code>, substituting, of course, your actual username on CS50 IDE in place of <code>USERNAME</code>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="specification"><a class="link" href="#specification">Specification</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Implement in your <code>homepage</code> directory a website that must:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Contain at least four different <code>.html</code> pages, at least one of which is <code>index.html</code> (the main page of your website), and it should be possible to get from any page on your website to any other page by following one or more hyperlinks.</p>
+</li>
+<li>
+<p>Use at least ten (10) distinct HTML tags besides <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, and <code>&lt;title&gt;</code>. Using some tag (e.g., <code>&lt;p&gt;</code>) multiple times still counts as just one (1) of those ten!</p>
+</li>
+<li>
+<p>Integrate one or more features from Bootstrap into your site. Bootstrap is a popular library (that comes with lots of CSS classes and more) via which you can beautify your site. See <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/">Bootstrap&#8217;s documentation</a> to get started. To add Bootstrap to your site, it suffices to include</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>&lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>in your pages' <code>&lt;head&gt;</code>, below which can</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>&lt;link href="styles.css" rel="stylesheet"&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>containing your own CSS.</p>
+</div>
+</li>
+<li>
+<p>Have at least one stylesheet file of your own creation, <code>styles.css</code>, which uses at least five (5) different CSS selectors (e.g. tag (<code>example</code>), class (<code>.example</code>), or ID (<code>#example</code>)), and within which you use a total of at least five (5) different CSS properties, such as <code>font-size</code>, or <code>margin</code>; and</p>
+</li>
+<li>
+<p>Ensure that your site looks nice on browsers both on mobile devices as well as laptops and desktops.</p>
+</li>
+<li>
+<p>No need to include any JavaScript on your site for this problem set, unless so inclined!</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to view how your site looks while you work on it, there are two options:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Within CS50 IDE, navigate to your <code>homepage</code> directory (remember how?) and then execute</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>http-server</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Within CS50 IDE, right-click (or Ctrl+click, on a Mac) on the <code>homepage</code> directory in the file tree at left. From the options that appear, select <strong>Serve</strong>, which should open a new tab in your browser (it may take a second or two) with your site therein.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In either case, you&#8217;ll be brought to a URL of the form</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>http://ide50-USERNAME.cs50.io:XXXX</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>USERNAME</code> is your username on CS50 IDE, and <code>XXXX</code> is either <code>8080</code> or <code>8081</code>, those referring to the <em>port number</em> on which your web server is listening for requests (instead of the default <code>80</code> or <code>443</code> for HTTP and HTTPS requests, respectively). At that address, you&#8217;ll see a listing of all of the files in your <code>homepage</code> directory, and from there can navigate to any HTML page you&#8217;ve created.</p>
+</div>
+<div class="paragraph">
+<p>Recall also that by opening Developer Tools in Google Chrome, you can <em>simulate</em> visiting your page on a mobile device by clicking the phone-shaped icon to the left of <strong>Elements</strong> in the developer tools window, or, once the Developer Tools tab has already been opened, by typing <code>Ctrl</code>+<code>Shift</code>+<code>M</code> on a PC or <code>Cmd</code>+<code>Shift</code>+<code>M</code> on a Mac, rather than needing to visit your site on a mobile device separately!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assessment"><a class="link" href="#assessment">Assessment</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="correctness"><a class="link" href="#correctness">Correctness</a></h3>
+<div class="paragraph">
+<p>Afraid there&#8217;s no <code>check50</code> for this assignment. Instead, your site&#8217;s correctness will be assessed based on whether you meet the requirements of the specification as outlined above, and whether your HTML is well-formed and valid. To ensure that your pages are, you can use <a href="https://validator.w3.org/#validate_by_input">the W3Schools HTML Validator</a> service, copying and pasting your HTML directly into the provided text box. Take care to eliminate any warnings or errors suggested by the validator before submitting!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="design"><a class="link" href="#design">Design</a></h3>
+<div class="paragraph">
+<p>In considering the overall design of your site, the staff will take into account the following, among potentially other things as well:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>whether the aesthetics of your site are such that it is intuitive and straightforward for a user to navigate;</p>
+</li>
+<li>
+<p>whether your CSS has been factored out into a separate CSS file(s); and</p>
+</li>
+<li>
+<p>whether you have avoided repetition and redundancy by "cascading" style properties from parent tags.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="style"><a class="link" href="#style">Style</a></h3>
+<div class="paragraph">
+<p>Afraid <code>style50</code> does not support HTML files, and so it is incumbent upon you to indent and align your HTML tags cleanly, as the per the examples shown in Week 5&#8217;s lecture. Know also that you can create an HTML comment with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>&lt;!-- Comment goes here --&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>but commenting your HTML code is not as imperative as it is when commenting code in, say, C or Python. You can also comment your CSS, in CSS files, with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>/* Comment goes here */</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hints"><a class="link" href="#hints">Hints</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For fairly comprehensive guides on the languages introduced in this problem, check out the documentation for each on W3Schools.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.w3schools.com/html">HTML</a></p>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/css">CSS</a></p>
+</li>
+<li>
+<p><a href="https://www.w3schools.com/js">JavaScript</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-submit"><a class="link" href="#how-to-submit">How to Submit</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Execute the below, logging in with your GitHub username and password when prompted. For security, you&#8217;ll see asterisks (<code>*</code>) instead of the actual characters in your password.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>submit50 cs50/2019/x/homepage</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying-your-homepage"><a class="link" href="#deploying-your-homepage">Deploying Your Homepage</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you would like to deploy your homepage publicly, so that anyone on the internet can visit it, you can optionally run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>check50 cs50/2019/x/challenges/site</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then visit <code><a href="https://USERNAME.cs50.site/" class="bare">https://USERNAME.cs50.site/</a></code>, where <code>USERNAME</code> is your GitHub username (not your IDE username). Best to wait a few minutes, else you might see <strong>404 Not Found</strong>.</p>
+</div>
+<div class="paragraph">
+<p>If you make changes to your homepage in CS50 IDE, you can re-deploy those changes as many times as you&#8217;d like by running the above command again. As before, it might take a few minutes for the changes to appear.</p>
+</div>
+<div class="sect2">
+<h3 id="troubleshooting"><a class="link" href="#troubleshooting">Troubleshooting</a></h3>
+<div class="paragraph">
+<p>The first time you visit your site, your browser may display a security warning.  This usually disappears after a few minutes.  If you are anxious to see your site, you can temporarily change the URL in your browser bar from <code>https://</code> to <code>http://</code>.</p>
+</div>
+</div>
+</div>
+</div>
+            <img src="html.jpg" alt="image of html code" height=500 width=650>
+
+        </main>
+        <footer>
+                Content sourced from CS50~ https://docs.cs50.net/2019/x/psets/5/index.html
+        </footer>
+    </body>
+</html>
