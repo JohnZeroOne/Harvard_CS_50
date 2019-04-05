@@ -1,0 +1,7 @@
+open file
+while read 512 bytes != EOF
+    if jpeg header
+        if (old file exists) close old file
+        open new writable file
+    write bytes
+close all files
